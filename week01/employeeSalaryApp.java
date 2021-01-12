@@ -9,6 +9,12 @@ package week01;
 public class employeeSalaryApp {
 
     public static void main(String[] args) {
+        // Create a Scanner
+        Scanner input = new Scanner(System.in);
 
+        System.out.println("Hi Accounts");
+        System.out.println("Please enter the first name of the employee: ");
+
+        System.out.println("Please enter the last name of the employee: ");
     }
 }
