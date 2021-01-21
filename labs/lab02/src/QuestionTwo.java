@@ -8,8 +8,11 @@ public class QuestionTwo {
         System.out.print("Enter your age: ");
         int age = input.nextInt();
 
-        if(age > 18) {
+        if(age <= 18) {
+            System.out.println("You are too young to go beyond this point");
+        } else {
             System.out.println("You have been granted access");
+            }
         }
     }
-}
+
