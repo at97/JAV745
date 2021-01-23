@@ -8,12 +8,13 @@ public class Question04 {
         // Declare constant
         final int LIMIT = 6;
 
+        int num = 0;
         int counter = 0;
         int numPositive = 0;
         int sumNegative = 0;
         while (counter < LIMIT) {
             System.out.print("Enter an integer: ");
-            int num = read.nextInt();
+            num = read.nextInt();
 
             if (num > 0) {
                 numPositive++;
