@@ -4,17 +4,17 @@ public class Question04 {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
 
-        System.out.print("Enter a number to sqaure: ");
+        System.out.print("Enter a number to cube: ");
         double num = read.nextDouble();
 
         // Invoke method
-        double result = sqr(num);
-        System.out.println(num + "^2" + " = " + result);
+        double result = cube(num);
+        System.out.println(num + "^3" + " = " + result);
     }
 
-    public static double sqr(double num) {
+    public static double cube(double num) {
         double square = 0;
-        square = num * num;
+        square = num * num * num;
         return square;
     }
 }
