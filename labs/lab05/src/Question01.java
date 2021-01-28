@@ -10,11 +10,11 @@ public class Question01 {
             System.out.print("Enter a number: ");
             array[i] = read.nextDouble();
         }
-        double sum = sum(array);
+        double sum = calculateSum(array);
         System.out.println("Sum: " + sum);
     }
 
-    public static double sum(double[] array) {
+    public static double calculateSum(double[] array) {
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
