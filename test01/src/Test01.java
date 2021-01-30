@@ -76,8 +76,17 @@ public class Test01 {
 //        System.out.println("Number of likes: " + likes);
 //        System.out.println("Number of dislikes: " + dislikes);
 //        System.out.println("Total earned: " + total);
-//
-//    }
+//        int code;
+//        code = 9 / 6;
+//        if (code == 1) {
+//            System.out.println("Case 1 is executed");
+//        } else if (code == 2) {
+//            System.out.println("Case 2 is executed");
+//        } else {
+//            System.out.println("No case is executed");
+//        }
+//        methodA();
+//        System.out.println("Test");
     }
 
     public static boolean isPerfect(int num) {
@@ -92,24 +101,12 @@ public class Test01 {
             }
         }
 
-//        if (sum == num) {
-//            result = true;
-//        } else {
-//            result = false;
-//        }
-//        return result;
-//        methodA();
-//        System.out.println("Test");
-
-        int code;
-        code = 9 / 6;
-        if (code == 1) {
-            System.out.println("Case 1 is executed");
-        } else if (code == 2) {
-            System.out.println("Case 2 is executed");
+        if (sum == num) {
+            result = true;
         } else {
-            System.out.println("No case is executed");
+            result = false;
         }
+        return result;
     }
 
 
