@@ -62,8 +62,7 @@ public class PoSSystem {
     }
 
     public static double finalTotal(double total, double discount) {
-        double finalVal = total - (total * (discount / 100));
-        return finalVal;
+        return total - (total * (discount / 100));
     }
 
     public static double getCash(double final_total) {
