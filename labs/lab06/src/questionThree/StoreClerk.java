@@ -13,4 +13,28 @@ public class StoreClerk {
         this.lastName = lastName;
         this.storeClerkID = storeClerkID;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getStoreClerkID() {
+        return storeClerkID;
+    }
+
+    public void setStoreClerkID(int storeClerkID) {
+        this.storeClerkID = storeClerkID;
+    }
 }
