@@ -6,15 +6,17 @@ public class SavingsAccount extends Account{
         super(customer);
     }
 
-    public SavingsAccount(double balance, String type, Customer customer) {
-        super(balance, type, customer);
+    public SavingsAccount(int accountNum, double balance, String type, Customer customer) {
+        super(accountNum, balance, type, customer);
     }
 
     @Override
     public String toString() {
         return "SavingsAccount{" +
-                "customer=" + customer +
+                "accountNum=" + accountNum +
+                ", customer=" + customer +
                 ", balance=" + balance +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
