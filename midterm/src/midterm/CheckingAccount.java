@@ -8,8 +8,8 @@ public class CheckingAccount extends Account {
         this.overdraft = overdraft;
     }
 
-    public CheckingAccount(double balance, String type, Customer customer, double overdraft) {
-        super(balance, type, customer);
+    public CheckingAccount(int accountNum, double balance, String type, Customer customer, double overdraft) {
+        super(accountNum, balance, type, customer);
         this.overdraft = overdraft;
     }
 
@@ -36,7 +36,8 @@ public class CheckingAccount extends Account {
     @Override
     public String toString() {
         return "CheckingAccount{" +
-                "customer=" + customer +
+                "accountNum=" + accountNum +
+                ", customer=" + customer +
                 ", balance=" + balance +
                 ", type='" + type + '\'' +
                 ", overdraft=" + overdraft +
