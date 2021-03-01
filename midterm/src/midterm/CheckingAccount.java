@@ -1,19 +1,16 @@
 package midterm;
 
-public class CheckingAccount extends Account{
+public class CheckingAccount extends Account {
     private double overdraft;
-    private String type;
 
-    public CheckingAccount(double overdraft, String type, Customer customer) {
+    public CheckingAccount(double overdraft, Customer customer) {
         super(customer);
         this.overdraft = overdraft;
-        this.type = type;
     }
 
     public CheckingAccount(double balance, String type, Customer customer, double overdraft) {
-        super(balance, customer);
+        super(balance, type, customer);
         this.overdraft = overdraft;
-        this.type = type;
     }
 
     public double getOverdraft() {
@@ -27,11 +24,12 @@ public class CheckingAccount extends Account{
     // Withdraw
     @Override
     public void withdraw(double amount) {
-        if (amount > (overdraft + balance)) {
+        if (amount < 0) {
+            System.out.println("Withdrawal amount must be greater than or equal to $0.00");
+        } else if (amount > (overdraft + balance)) {
             System.out.println("The amount you are trying to withdraw exceeds your current balance and overdraft");
         } else {
             balance -= amount;
-            System.out.printf("Successfully withdrawn $%.2f\nUpdated Balance: $%.2f", amount, balance);
         }
     }
 
