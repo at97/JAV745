@@ -1,29 +1,28 @@
 package midterm;
 
 public class Account {
-    protected static int accountNum;
+    protected int accountNum;
     protected Customer customer;
     protected double balance;
     protected String type;
 
     public Account(Customer customer) {
         this.customer = customer;
-        accountNum++;
     }
 
-    public Account(double balance, String type, Customer customer) {
+    public Account(int accountNum, double balance, String type, Customer customer) {
+        this.accountNum = accountNum;
         this.balance = balance;
         this.type = type;
         this.customer = customer;
-        accountNum++;
     }
 
-    public static int getAccountNum() {
+    public int getAccountNum() {
         return accountNum;
     }
 
-    public static void setAccountNum(int accountNum) {
-        Account.accountNum = accountNum;
+    public void setAccountNum(int accountNum) {
+        this.accountNum = accountNum;
     }
 
     public Customer getCustomer() {
@@ -73,9 +72,10 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-                "customer=" + customer +
+                "accountNum=" + accountNum +
+                ", customer=" + customer +
                 ", balance=" + balance +
-                ", type=" + type +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
