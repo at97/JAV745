@@ -1,24 +1,13 @@
 package midterm;
 
 public class SavingsAccount extends Account{
-    private String type = "Savings";
 
-    public SavingsAccount(String type, Customer customer) {
+    public SavingsAccount(Customer customer) {
         super(customer);
-        this.type = type;
     }
 
     public SavingsAccount(double balance, String type, Customer customer) {
-        super(balance, customer);
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+        super(balance, type, customer);
     }
 
     @Override
@@ -26,7 +15,6 @@ public class SavingsAccount extends Account{
         return "SavingsAccount{" +
                 "customer=" + customer +
                 ", balance=" + balance +
-                ", type='" + type + '\'' +
                 '}';
     }
 }
