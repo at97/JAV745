@@ -8,7 +8,7 @@ public class MainBankApp {
         Scanner read = new Scanner(System.in);
 
         // Question 1: Customer database
-        ArrayList<Customer> customerDatabase = new ArrayList<Customer>();
+        ArrayList<Customer> customerDatabase = new ArrayList<>();
         customerDatabase.add(new Customer("Bruce", "Wayne", "Brampton", "bWayne",
                 "12345"));
         customerDatabase.add(new Customer("Thanos", "Badman", "North York", "tBadman",
@@ -17,11 +17,11 @@ public class MainBankApp {
                 "39087"));
 
         // Question 2: Account database
-        ArrayList<Account> accountDatabase = new ArrayList<Account>();
-        accountDatabase.add(new SavingsAccount(500, "Savings", customerDatabase.get(0)));
-        accountDatabase.add(new SavingsAccount(1000, "Savings", customerDatabase.get(1)));
-        accountDatabase.add(new CheckingAccount(500000, "Checking", customerDatabase.get(2), 1500));
-        accountDatabase.add(new CheckingAccount(400000, "Checking", customerDatabase.get(0), 10000));
+        ArrayList<Account> accountDatabase = new ArrayList<>();
+        accountDatabase.add(new SavingsAccount(1, 500, "Savings", customerDatabase.get(0)));
+        accountDatabase.add(new SavingsAccount(2, 1000, "Savings", customerDatabase.get(1)));
+        accountDatabase.add(new CheckingAccount(3, 500000, "Checking", customerDatabase.get(2), 1500));
+        accountDatabase.add(new CheckingAccount(4, 400000, "Checking", customerDatabase.get(0), 10000));
 
         // Question 4: Ask for login info + account type
         boolean validLogin = false;
@@ -50,17 +50,17 @@ public class MainBankApp {
             if (userAccountOption == 'C' || userAccountOption == 'c') {
                 // Check if user has that account
                 userAccount = verifyAccountType(accountDatabase, userCustomer, "Checking");
-                if (userCustomer != null) {
+                if (userAccount != null) {
                     validAccountOption = true;
                 }
             } else if (userAccountOption == 'S' || userAccountOption == 's') {
                 userAccount = verifyAccountType(accountDatabase, userCustomer, "Savings");
-                if (userCustomer != null) {
+                if (userAccount != null) {
                     validAccountOption = true;
                 }
             } else {
+                // Invalid account type
                 System.out.println("Error: select a valid account type");
-                validAccountOption = false;
             }
         }
 
@@ -81,16 +81,13 @@ public class MainBankApp {
                 // Withdrawal
                 System.out.print("Enter amount to withdraw: $");
                 double withdrawalAmount = read.nextDouble();
-                if (userAccount.getType() == "Checking") {
-                    // Cast to CheckingAccount because it includes overdraft
-                    ((CheckingAccount) userAccount).withdraw(withdrawalAmount);
-                } else {
-                    userAccount.withdraw(withdrawalAmount);
-                }
+                userAccount.withdraw(withdrawalAmount);
             } else if (userBankingOperation == 'X' || userBankingOperation == 'x') {
+                // Exit
                 System.out.println("Goodbye!");
                 validOperation = true;
             } else {
+                // Invalid operation
                 System.out.println("Error: select a valid operation");
             }
         }
@@ -103,6 +100,7 @@ public class MainBankApp {
                 return customerDatabase.get(i);
             }
         }
+        // Incorrect login information
         System.out.println("Invalid login information");
         return null;
     }
