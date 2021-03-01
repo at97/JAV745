@@ -58,6 +58,10 @@ public class Customer {
         this.password = password;
     }
 
+    public String getName() {
+        return firstName + " " + lastName;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
