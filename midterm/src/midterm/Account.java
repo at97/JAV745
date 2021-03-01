@@ -4,15 +4,16 @@ public class Account {
     protected static int accountNum;
     protected Customer customer;
     protected double balance;
-//    protected String type;
+    protected String type;
 
     public Account(Customer customer) {
         this.customer = customer;
         accountNum++;
     }
 
-    public Account(double balance, Customer customer) {
+    public Account(double balance, String type, Customer customer) {
         this.balance = balance;
+        this.type = type;
         this.customer = customer;
         accountNum++;
     }
@@ -41,22 +42,28 @@ public class Account {
         this.balance = balance;
     }
 
-//    public String getType() {
-//        return type;
-//    }
-//
-//    public void setType(String type) {
-//        this.type = type;
-//    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     // Deposit
     public void deposit(double amount) {
-        balance += amount;
+        if (amount < 0) {
+            System.out.println("Deposit amount must be greater than or equal to $0.00");
+        } else {
+            balance += amount;
+        }
     }
 
     // Withdraw
     public void withdraw(double amount) {
-        if (amount > balance) {
+        if (amount < 0) {
+            System.out.println("Withdrawal amount must be greater than or equal to $0.00");
+        } else if (amount > balance) {
             System.out.println("The amount you are trying to withdraw exceeds your current balance");
         } else {
             balance -= amount;
@@ -68,6 +75,7 @@ public class Account {
         return "Account{" +
                 "customer=" + customer +
                 ", balance=" + balance +
+                ", type=" + type +
                 '}';
     }
 }
