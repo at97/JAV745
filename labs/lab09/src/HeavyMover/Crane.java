@@ -1,27 +1,27 @@
 package HeavyMover;
 
 public class Crane implements HeavyMoverObject{
-    private double gas;
+    private Boolean hasGas;
 
     public Crane() {
-        this.gas = 100;
+        this.hasGas = true;
     }
 
-    public Crane(double gas) {
-        this.gas = gas;
+    public Crane(boolean gas) {
+        this.hasGas = gas;
     }
 
-    public double getGas() {
-        return gas;
+    public Boolean getHasGas() {
+        return hasGas;
     }
 
-    public void setGas(double gas) {
-        this.gas = gas;
+    public void setHasGas(Boolean hasGas) {
+        this.hasGas = hasGas;
     }
 
     @Override
     public void movesObject(){
-        if (gas > 0) {
+        if (hasGas) {
             System.out.println("Moving object now!");
         } else {
             System.out.println("Cannot move object, not enough gas.");

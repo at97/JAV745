@@ -6,8 +6,8 @@ public class Main {
         Crane crane = new Crane();
         elephant.movesObject();
         crane.movesObject();
-        crane.setGas(0);
-        System.out.println("Crane gas: " + crane.getGas());
+        crane.setHasGas(false);
+        System.out.println("Crane has gas: " + crane.getHasGas());
         crane.movesObject();
     }
 }
