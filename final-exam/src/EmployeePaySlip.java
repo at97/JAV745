@@ -1,4 +1,4 @@
-public class EmployeePaySlip {
+public abstract class EmployeePaySlip {
     public EmployeePaySlip() {
     }
 }
