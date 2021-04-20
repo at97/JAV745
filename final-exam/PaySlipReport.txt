@@ -1,0 +1,59 @@
+----------Employee 1----------
+Employee ID: 59G2
+Employee name: John Doe
+Employee department: Engineering
+Employee type: Faculty
+Employee degree type: Master's degree
+Hours worked: 200.0
+Gross salary: $36500.0
+Deductions: $8533.0
+Net salary: $27967.0
+
+----------Employee 2----------
+Employee ID: 39B1
+Employee name: Bob Dylan
+Employee department: Music
+Employee type: Faculty
+Employee degree type: Bachelor's degree
+Hours worked: 100.0
+Gross salary: $10600.0
+Deductions: $2058.0
+Net salary: $8542.0
+
+----------Employee 3----------
+Employee ID: 84N6
+Employee name: Joseph Smith
+Employee department: Theology
+Employee type: Non-faculty
+Monthly salary: $4500.0
+Hours worked: 175.0
+Gross salary: $5343.75
+Deductions: $743.9375
+Net salary: $4599.8125
+
+----------Employee 4----------
+Employee ID: 37G9
+Employee name: Jim Baker
+Employee department: Art
+Employee type: Non-faculty
+Monthly salary: $3600.0
+Hours worked: 160.0
+Gross salary: $3600.0
+Deductions: $308.0
+Net salary: $3292.0
+
+----------Employee 5----------
+Employee ID: 28J5
+Employee name: Jon Snow
+Employee department: Drama
+Employee type: Non-faculty
+Monthly salary: $2500.0
+Hours worked: 90.0
+Gross salary: $1406.25
+Deductions: $19.2
+Net salary: $1387.05
+
+------------------------------
+Processed employees: 5
+Total number of faculty: 2
+Total number of non-faculty: 3
