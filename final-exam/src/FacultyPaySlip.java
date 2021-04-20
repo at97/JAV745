@@ -46,8 +46,10 @@ public class FacultyPaySlip extends EmployeePaySlip {
     public double calculateGrossSalary() {
         double grossPay = 0.0;
         if (qualificationCode == Character.toUpperCase('M')) {
+            // Gross salary calculation for master's degree holders
             grossPay = (employee.getHours() * MASTERS_SALARY_PER_HOUR) + MASTERS_TEACHING_ALLOWANCE;
         } else if (qualificationCode == Character.toUpperCase('B')) {
+            // Gross salary calculation for bachelor's degree holders
             grossPay = (employee.getHours() * BACHELORS_SALARY_PER_HOUR) + BACHELORS_TEACHING_ALLOWANCE;
         }
         return grossPay;

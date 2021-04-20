@@ -9,7 +9,9 @@ public class PayrollApp {
     private static final Scanner read = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Employees database
         ArrayList<Employee> employees = new ArrayList<>();
+        // Pay slip database
         ArrayList<EmployeePaySlip> paySlipDatabase = new ArrayList<>();
         System.out.println("ABC College Payroll Calculator");
 
@@ -231,6 +233,7 @@ public class PayrollApp {
 
     public static void writePaySlipReportToFile(ArrayList<EmployeePaySlip> paySlip) {
         try {
+            // Output to file
             BufferedWriter output = new BufferedWriter(new FileWriter("PaySlipReport.txt"));
             for (int i = 0; i < paySlip.size(); i++) {
                 output.write("----------Employee " + (i + 1) + "----------\n");

@@ -41,12 +41,14 @@ public class NonFacultyPaySlip extends EmployeePaySlip {
 
     @Override
     public double calculateGrossSalary() {
-        double grossPay = 0.0;
+        double grossPay;
         if (employee.getHours() > NON_FACULTY_HOURS) {
+            // Non-faculty employees who work over 160 hours earn double time pay
             grossPay = monthlySalary + (2 * (monthlySalary / NON_FACULTY_HOURS) * (employee.getHours() - NON_FACULTY_HOURS));
         } else if (employee.getHours() == NON_FACULTY_HOURS) {
             grossPay = monthlySalary;
         } else {
+            // Non-faculty employees who work less than 160 hours receive a prorated monthly salary
             grossPay = (monthlySalary / NON_FACULTY_HOURS) * employee.getHours();
         }
         return grossPay;

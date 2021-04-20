@@ -26,10 +26,13 @@ public abstract class EmployeePaySlip {
         this.employee = employees;
     }
 
+    // Abstract method to calculate gross salary of employees
     public abstract double calculateGrossSalary();
 
+    // Calculate deductions from gross pay
     public double calculateDeductions() {
         double deductions = 0.0;
+        // Employees earning less than $2500/month are exempt from income tax
         if (calculateGrossSalary() >= TAX_FREE_ALLOWANCE) {
             deductions += (CANADIAN_INCOME_TAX * (calculateGrossSalary() - TAX_FREE_ALLOWANCE));
         }
@@ -41,6 +44,7 @@ public abstract class EmployeePaySlip {
         return deductions;
     }
 
+    // Calculate net salary
     public double calculateNetSalary() {
         return calculateGrossSalary() - calculateDeductions();
     }
